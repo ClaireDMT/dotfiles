@@ -52,3 +52,6 @@
 
 [init]
   defaultBranch = master
+[user]
+	email = claire.edith.demont@gmail.com
+	name = claire demont
