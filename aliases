@@ -6,4 +6,39 @@ alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/m
 alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
 # NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
-alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
+
+
+net() { open "https://www.$1"; }
+
+alias aliases='~/.aliases'
+
+
+# Get External IP / local IPs
+alias ip="curl ipinfo.io/ip"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
+
+# Quickly serve the current directory as HTTP
+alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
+
+# GIT
+alias gac="git add . && git commit -m"
+alias gc="git commit -m"
+alias gpb="git push origin $(git_current_branch)"
+alias gpom="git pull origin master"
+
+# rails
+alias pid3000="lsof -wni tcp:3000"
+alias rdbm="rails db migrate"
+
+# priicer
+alias deploy="./deploy.sh"
+alias prod="ssh deploy@104.6.127.220"
+alias priicer="cd ~/code/ClaireDMT/Missions/priicer"
+
+# jekyll
+alias jekyll-s="bundle exec jekyll serve --livereload"
+alias pid4000="lsof -wni tcp:4000"
+
+
+alias teach="cd ~/code/Teaching"
