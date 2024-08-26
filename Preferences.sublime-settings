@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Theme - Solarized Space/Solarized V (Light).tmTheme",
+	"ignored_packages":
+	[
+		"Package Control",
+		"Vintage",
+	],
+	"theme": "Adaptive.sublime-theme",
+	"font_size": 16,
+	"index_files": true,
+}

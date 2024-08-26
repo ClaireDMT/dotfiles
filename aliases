@@ -10,11 +10,11 @@ alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
 net() { open "https://www.$1"; }
 
-alias aliases='~/.aliases'
+alias aliases='code ~/.aliases'
 
 
 # Get External IP / local IPs
-alias ip="curl ipinfo.io/ip"
+alias showip="curl ipinfo.io/ip"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip"
 
@@ -24,21 +24,34 @@ alias serve='ruby -run -e httpd . -p 8000'  # Or python -m SimpleHTTPServer :)
 # GIT
 alias gac="git add . && git commit -m"
 alias gc="git commit -m"
-alias gpb="git push origin $(git_current_branch)"
 alias gpom="git pull origin master"
+alias gpoma="git pull origin main"
+alias gsweep='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse "$branch^{tree}") -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 
 # rails
 alias pid3000="lsof -wni tcp:3000"
 alias rdbm="rails db migrate"
+alias start-redis="sudo systemctl restart redis-server"
+alias start-mongo="sudo systemctl restart mongod"
+
+#nerdadvisor
+alias nerd="cd ~/code/ClaireDMT/pro/NerdAdvisor"
+alias dcr='docker compose run web'
+alias dcb='docker compose build'
+alias dcu='docker compose up'
 
 # priicer
 alias deploy="./deploy.sh"
-alias prod="ssh deploy@104.6.127.220"
-alias priicer="cd ~/code/ClaireDMT/Missions/priicer"
+alias deploy_shop="./deploy_shop.sh"
+alias prod="ssh deploy@10.100.0.4"
+alias priicer="cd ~/code/ClaireDMT/pro/priicer"
+alias vpnPriicer="cd /etc/openvpn && sudo openvpn --config ./priicer.ovpn"
+alias start-all="sudo systemctl restart redis-server && sudo systemctl start mongod && RAILS_MAX_THREADS=15 bundle exec sidekiq -C config/sidekiq.yml"
 
 # jekyll
 alias jekyll-s="bundle exec jekyll serve --livereload"
 alias pid4000="lsof -wni tcp:4000"
 
 
-alias teach="cd ~/code/Teaching"
+alias teach="cd ~/code/teaching"
+alias aoc="cd ~/code/ClaireDMT/perso/aoc_23"

@@ -40,7 +40,7 @@
         "coverage": true,
         "dist": true,
         "log": true,
-        "node_modules": true,
+        "node_modules": false,
         "public/packs": true,
         "tmp": true
     },
@@ -56,7 +56,6 @@
         "**/tmp/**": true,
         "**/vendor/**": true
     },
-    "git.enabled": false,
     "notebook.diff.ignoreMetadata": true,
     "notebook.lineNumbers": "on",
     "notebook.markup.fontSize": 13,
@@ -80,7 +79,21 @@
     "workbench.settings.useSplitJSON": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.panel.defaultLocation": "right",
-    "window.zoomLevel": 1,
-    "workbench.colorTheme": "Winter is Coming (Dark Blue)",
+    "workbench.colorTheme": "GitHub Dark Default",
     "security.workspace.trust.untrustedFiles": "open",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.autoSave": "afterDelay",
+    "editor.inlineSuggest.enabled": true,
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": true,
+      "markdown": true,
+      "scminput": false,
+      "javascript": true
+    },
+    "window.zoomLevel": 2,
 }
